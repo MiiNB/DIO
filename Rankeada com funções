@@ -1,0 +1,35 @@
+// Coleta as vitórias e derrotas do usuário primeiro
+let vitorias = parseInt(prompt("Digite o número de vitórias:")); // Pede o número de vitórias
+let derrotas = parseInt(prompt("Digite o número de derrotas:")); // Pede o número de derrotas
+
+// Calcula a classificação somando vitórias e derrotas
+let classificacao = vitorias + derrotas; 
+
+// Função para calcular o nível com base na classificação
+function calcularNivel(classificacao) {
+    let nivel;
+
+    if (classificacao < 10) {
+        nivel = "Ferro";
+    } else if (classificacao >= 11 && classificacao < 20) {
+        nivel = "Bronze";
+    } else if (classificacao >= 21 && classificacao < 50) {
+        nivel = "Prata";
+    } else if (classificacao >= 51 && classificacao < 80) {
+        nivel = "Ouro";
+    } else if (classificacao >= 81 && classificacao < 90) {
+        nivel = "Diamante";
+    } else if (classificacao >= 91 && classificacao < 100) {
+        nivel = "Lendário";
+    } else {
+        nivel = "Imortal";
+    }
+
+    return nivel; // Retorna o nível calculado
+}
+
+// Chama a função para calcular o nível com base na classificação
+let nivel = calcularNivel(classificacao);
+
+// Exibe o resultado no console
+console.log(`O herói tem ${classificacao} vitórias e está no nível ${nivel}`);
